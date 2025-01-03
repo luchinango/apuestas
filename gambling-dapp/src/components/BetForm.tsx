@@ -17,19 +17,22 @@ const BetForm: React.FC = () => {
     e.preventDefault();
     setError('');
 
-    if (!amount) {
-      setError('Por favor ingrese un monto para la apuesta.');
+    // Reemplazar comas por puntos
+    const normalizedAmount = amount.replace(',', '.');
+    const betAmount = parseFloat(normalizedAmount);
+    if (isNaN(betAmount) || betAmount < 0.0001 || betAmount > 0.001) {
+      setError('La apuesta debe estar entre 0.0001 y 0.001 ETH.');
       return;
     }
 
     const num = Number(chosenNumber);
     if (isNaN(num) || num < 0 || num > 15) {
-      setError('Escoger un número entre 0 y 15.');
+      setError('Escoge un número entre 0 y 15.');
       return;
     }
 
     try {
-      await placeBet(chosenNumber, amount);
+      await placeBet(chosenNumber, normalizedAmount);
       setAmount('');
       setChosenNumber(0);
     } catch (err) {
@@ -54,7 +57,7 @@ const BetForm: React.FC = () => {
         </div>
         <div>
           <label>
-            Escogé un número (0-15):
+            Escoge un número (0-15):
             <input
               type="number"
               value={chosenNumber}
