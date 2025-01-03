@@ -26,9 +26,9 @@ export const useWeb3 = () => {
       setProvider(web3Provider);
 
       window.ethereum?.on?.('accountsChanged', (accounts: unknown) => {
-        const accountArray = accounts as string[];
-        if (accountArray.length > 0) {
-          setAccount(accountArray[0]);
+        const accountList = accounts as string[];
+        if (accountList.length > 0) {
+          setAccount(accountList[0]);
         } else {
           setAccount(null);
         }
