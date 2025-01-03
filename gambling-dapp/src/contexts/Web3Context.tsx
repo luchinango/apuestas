@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { ethers } from 'ethers';
-import { getContract, SimpleGamblingGameContract } from '../utils/contract.ts';
+import { getContract, SimpleGamblingGameContract } from '../utils/contract.js';
 
 export interface Web3ContextProps {
   provider: ethers.providers.Web3Provider | null;
