@@ -1,6 +1,7 @@
 import React from 'react';
 import BetForm from '../components/BetForm.js';
 import GameStatus from '../components/GameStatus.js';
+import BetList from '../components/BetList.js';
 import useWeb3 from '../hooks/useWeb3.js';
 
 const Home: React.FC = () => {
@@ -36,6 +37,7 @@ const Home: React.FC = () => {
       </header>
       <BetForm />
       <GameStatus />
+      <BetList />
     </div>
   );
 };

@@ -14,10 +14,14 @@ const GameStatus: React.FC = () => {
 
   useEffect(() => {
     const fetchGameStatus = async () => {
-      const winners = await getLastWinners();
-      const round = await getCurrentRound();
-      setLastWinners(winners);
-      setCurrentRound(round);
+      try {
+        const winners = await getLastWinners();
+        const round = await getCurrentRound();
+        setLastWinners(winners);
+        setCurrentRound(round);
+      } catch (error) {
+        console.error('Error fetching game status:', error);
+      }
     };
 
     fetchGameStatus();

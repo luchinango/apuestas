@@ -8,6 +8,7 @@ export interface Web3ContextProps {
   getLastWinners: () => Promise<string[]>;
   getCurrentRound: () => Promise<number>;
   placeBet: (number: number, amount: string) => Promise<void>;
+  getBets: () => Promise<{ player: string; amount: string; chosenNumber: number }[]>;
 }
 
 const Web3Context = createContext<Web3ContextProps | undefined>(undefined);
@@ -64,11 +65,27 @@ export const Web3Provider: React.FC<Web3ProviderProps> = ({ children }) => {
     }
   };
 
+  const getBets = async (): Promise<{ player: string; amount: string; chosenNumber: number }[]> => {
+    if (!contract) {
+      throw new Error('Contract is not initialized');
+    }
+
+    const filter = contract.filters.BetPlaced();
+    const events = await contract.queryFilter(filter);
+
+    return events.map(event => ({
+      player: event.args?.player,
+      amount: ethers.utils.formatEther(event.args?.amount),
+      chosenNumber: event.args?.chosenNumber,
+    }));
+  };
+
   return (
-    <Web3Context.Provider value={{ provider, contract, getLastWinners, getCurrentRound, placeBet }}>
+    <Web3Context.Provider value={{ provider, contract, getLastWinners, getCurrentRound, placeBet, getBets }}>
       {children}
     </Web3Context.Provider>
   );
 };
 
 export { Web3Context };
+//export type { Web3ContextProps };
