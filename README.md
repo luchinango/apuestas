@@ -134,6 +134,8 @@ Incluye capturas de:
 
 ---
 
+Para evitar la fallas de Nounce cuando se tiene que reiniciar el bloque, será necesario restablecer los datos de la cuenta de MetaMask
+
 La restricción de la apuesta es que solo se usan valores entre 0,001 y 0,0001
 ![Imagen de WhatsApp 2025-01-02 a las 20 44 19_4f88fc20](https://github.com/user-attachments/assets/70f833f5-c67a-459f-b616-a4495c826dcc)
 ![Imagen de WhatsApp 2025-01-02 a las 20 44 33_b6c98905](https://github.com/user-attachments/assets/11645420-2475-4d51-873b-d4ecbb35b010)
@@ -142,3 +144,13 @@ La restricción de la apuesta es que solo se usan valores entre 0,001 y 0,0001
 ![Imagen de WhatsApp 2025-01-02 a las 21 00 35_2526fe5d](https://github.com/user-attachments/assets/e8efa1a7-2a56-4203-b9d8-638fb6dda98a)
 ![image](https://github.com/user-attachments/assets/f1d2ca90-109d-48af-b0c9-eaa139c93b23)
 ![image](https://github.com/user-attachments/assets/fb571e8d-524d-4109-b19a-4a6b32435fdc)
+
+
+
+https://github.com/user-attachments/assets/d5c6cbb7-fd55-4434-9997-b1d52aa15871
+
+
+
+https://github.com/user-attachments/assets/7867026a-d09c-4d5a-8f2c-8ec821b9f6ae
+
+
