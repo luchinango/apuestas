@@ -134,7 +134,7 @@ Incluye capturas de:
 
 ---
 
-Para evitar la fallas de Nounce cuando se tiene que reiniciar el bloque, será necesario restablecer los datos de la cuenta de MetaMask
+Para evitar la fallas de Nounce (Fallas al momento de realizar una transacción, falla que se provoca cuando se pierde la secuencia de la cadena de un bloque), se tienen que restablecer los datos de la cuenta de MetaMask.
 
 La restricción de la apuesta es que solo se usan valores entre 0,001 y 0,0001
 ![Imagen de WhatsApp 2025-01-02 a las 20 44 19_4f88fc20](https://github.com/user-attachments/assets/70f833f5-c67a-459f-b616-a4495c826dcc)
